@@ -9,7 +9,6 @@ def get_mask_card_number(card_number: str) -> str:
     # Список для хранения замаскированного номера карты
     counter = 0
     # Счетчик цифр в номере карты, чтобы знать, какую заменить на *
-
     for number in card_number:
         counter += 1
         if 6 < counter <= len(card_number) - 4:
@@ -17,19 +16,13 @@ def get_mask_card_number(card_number: str) -> str:
         else:
             result.append(number)
     masked_card = "".join(result)
-
     masked_card_result = []
-    # список для хранения по четыре цифры номера карты
 
+    # список для хранения по четыре цифры номера карты
     for i in range(0, len(masked_card), 4):
         masked_card_result.append(masked_card[i : i + 4])
-
     masked_card_result_with_space = " ".join(masked_card_result)
-
     return masked_card_result_with_space
-
-
-print(get_mask_card_number(card_number="1234567890987654"))
 
 
 def get_mask_account(card_account: str) -> str:
@@ -39,5 +32,3 @@ def get_mask_account(card_account: str) -> str:
     last_part = str(card_account[-4:])
     return f"**{last_part}"
 
-
-print(get_mask_account(card_account="1234566789900009"))
