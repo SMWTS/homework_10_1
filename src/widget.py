@@ -11,13 +11,14 @@ def mask_account_card(string: str) -> tuple[str, str]:
 
     return name_card_or_score, number_card_or_score
 
-
+#тест для поверки работы функции маскировки карт
 test_card = "Visa Platinum 7000792289606361"
 name_card, card_number = mask_account_card(test_card)
 masked_number = get_mask_card_number(card_number)
 print(f"{name_card} {masked_number}")
 
 
+#тест для проверки работы функции маскировки счета
 test_check = "Счет 35383033474447895560"
 name_check, check_number = mask_account_card(test_check)
 masked_check = get_mask_account(test_check)
