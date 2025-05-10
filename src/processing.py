@@ -24,9 +24,9 @@ dict_data = [
 ]
 
 
-def sort_by_date(sort_operation: List[Dict[str, Any]], rerverse: bool = True) -> List[Dict]:
+def sort_by_date(sort_operation: List[Dict[str, Any]], ascending: bool = True) -> List[Dict]:
     """Функция возвращает новый список, отсортированные по дате"""
-    return sorted(sort_operation, key=lambda x: str(x.get("date")), reverse=rerverse)
+    return sorted(sort_operation, key=lambda x: str(x.get("date")), reverse=ascending)
 
 
 print(sort_by_date(dict_data))
