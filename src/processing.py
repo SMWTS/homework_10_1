@@ -8,7 +8,7 @@ dict_filter = [
 ]
 
 
-def filter_by_state(operation: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict]:
+def filter_by_state(operation: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict[str, Any]]:
     """Функция возвращает новый список, отфильтрованный по заданному значению"""
     return [item for item in operation if item.get("state") == state]
 
@@ -24,7 +24,7 @@ dict_data = [
 ]
 
 
-def sort_by_date(sort_operation: List[Dict[str, Any]], ascending: bool = True) -> List[Dict]:
+def sort_by_date(sort_operation: List[Dict[str, Any]], ascending: bool = True) -> List[Dict[str, Any]]:
     """Функция возвращает новый список, отсортированные по дате"""
     return sorted(sort_operation, key=lambda x: str(x.get("date")), reverse=ascending)
 
