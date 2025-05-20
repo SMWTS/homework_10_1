@@ -1,8 +1,5 @@
 from datetime import datetime
 
-from src.masks import get_mask_account, get_mask_card_number
-
-
 def mask_account_card(account_or_card: str) -> str:
     """Функция принимает тип и номер карты или счета и возвращает строку с замаскированным номером"""
     account_or_card_split = account_or_card.split()
