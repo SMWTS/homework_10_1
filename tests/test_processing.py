@@ -15,7 +15,3 @@ def test_filter_by_state_cans(filter_state_cans):
 ])
 def test_sort_by_date(input_data, expected_output):
     assert sort_by_date(input_data) == expected_output
-
-@pytest.fixture
-def not_correct_data():
-    return [{'date': '12-03-18'}]  # Некорректный формат даты
