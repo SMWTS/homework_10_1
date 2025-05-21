@@ -1,4 +1,5 @@
 from typing import Any, Dict, List
+from datetime import datetime
 
 dict_filter = [
     {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
@@ -26,7 +27,8 @@ dict_data = [
 
 def sort_by_date(sort_operation: List[Dict[str, Any]], ascending: bool = True) -> List[Dict[str, Any]]:
     """Функция возвращает новый список, отсортированные по дате"""
-    return sorted(sort_operation, key=lambda x: str(x.get("date")), reverse=ascending)
-
-
-print(sort_by_date(dict_data))
+    try:
+        return sorted(sort_operation, key=lambda x: datetime.strptime(x["date"], "%Y-%m-%d"), reverse=ascending)
+    except ValueError:
+        print("Данные введены неверно")
+        raise  # Повторно выбрасываем исключение
