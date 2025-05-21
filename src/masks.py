@@ -38,7 +38,7 @@ def get_mask_account(card_account: str) -> str:
     card_account_split = card_account.split()
     account_name = card_account_split[0]
     account_num = card_account_split[-1]
-    if len(account_num) != 20:
+    if len(account_num) != 20 or account_name != "Счет":
         return "Введен неверный номер счета"
 
     last_part = str(account_num[-4:])
